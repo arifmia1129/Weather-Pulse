@@ -1,0 +1,11 @@
+.container {
+  background-image: url("https://images.unsplash.com/photo-1498496294664-d9372eb521f3");
+  background-position: "center";
+  background-size: "cover";
+  background-repeat: "no-repeat";
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
