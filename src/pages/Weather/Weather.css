@@ -8,4 +8,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+}
+
+.select-address {
+  width: 100%;
+  min-width: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
