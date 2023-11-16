@@ -26,7 +26,7 @@ export default function Weather() {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${getAccessToken()}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${getAccessToken()}`
       );
 
       if (Array.isArray(data) && data.length) {
