@@ -2,18 +2,17 @@
 import { Select } from "antd";
 import axios from "axios";
 import { useState } from "react";
+import { getAccessToken } from "../../utils/info";
 
 export default function SearchLocation() {
   const [availableLocations, setAvailableLocations] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const token = process.env.TOKEN;
-
   const handleSearchLocation = async (value: string) => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${token}`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${getAccessToken()}`
       );
 
       if (Array.isArray(data) && data.length) {
