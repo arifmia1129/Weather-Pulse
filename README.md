@@ -62,7 +62,13 @@ Check out the live site: [Weather Pulse](https://weather-pulse-plum.vercel.app)
    npm install
    ```
 
-3. Run the project:
+3. **Important Note**: Create a `.env` file in the project root and add the following line, replacing `accessTokenFromOpenWeather` with your OpenWeatherMap API access token:
+
+   ```env
+   TOKEN=accessTokenFromOpenWeather
+   ```
+
+4. Run the project:
 
    ```bash
    npm start
@@ -89,3 +95,7 @@ Feel free to open issues, contribute to the project, or provide feedback.
 Due to the limitations of the free API, the project uses hourly forecast data instead of daily forecasts.
 
 🚀 Happy Exploring the Weather with Weather Pulse! 🌈
+
+---
+
+**Note: If you plan to use this project locally after cloning, make sure to add a `.env` file in the root directory and include the line `TOKEN=accessTokenFromOpenWeather`, replacing `accessTokenFromOpenWeather` with your OpenWeatherMap API access token.**
