@@ -44,7 +44,7 @@ export default function ForecastTable() {
     },
   ];
 
-  const data = weatherInfo?.list?.splice(1, 6).map((info: any) => {
+  const data = (weatherInfo as any)?.list?.splice(1, 4).map((info: any) => {
     return {
       date: info?.dt_txt,
       temparature: Math.ceil(info?.main?.temp),

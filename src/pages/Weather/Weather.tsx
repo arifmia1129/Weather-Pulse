@@ -9,7 +9,7 @@ import axios from "axios";
 import Loading from "../../components/Shared/Loading";
 import Forecast from "../../components/Weather/Forecast";
 
-export const WeatherContext = createContext({});
+export const WeatherContext = createContext<any | null>(null);
 
 export default function Weather() {
   // Weather State
