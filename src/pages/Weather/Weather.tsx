@@ -41,11 +41,14 @@ export default function Weather() {
       //   console.error("Error fetching data:", error);
     } finally {
       setLoading(false);
+      handleGetWeatherInfo();
     }
   };
 
   const onChange = (value: string) => {
     localStorage.setItem("location", JSON.stringify(value));
+    handleLocationInfo();
+    handleGetWeatherInfo();
   };
 
   const onSearch = (value: string) => {
@@ -83,18 +86,20 @@ export default function Weather() {
         (locationInfo as any).lat
       }&lon=${(locationInfo as any).lon}&units=metric&appid=${getAccessToken()}`
     );
-    console.log(data);
     setWeatherInfo(data);
   };
 
-  useEffect(() => {
+  const handleLocationInfo = () => {
     const res = getLocationInfo();
-
     if (!res) {
       navigator.geolocation.getCurrentPosition(success, error);
     } else {
       setLocationInfo(res);
     }
+  };
+
+  useEffect(() => {
+    handleLocationInfo();
   }, []);
 
   useEffect(() => {
@@ -108,7 +113,7 @@ export default function Weather() {
   return (
     <WeatherContext.Provider value={value}>
       <div className="container">
-        <div>
+        <div className="weather-info">
           <SearchLocation
             onChange={onChange}
             onSearch={onSearch}

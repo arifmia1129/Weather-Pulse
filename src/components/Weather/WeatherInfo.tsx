@@ -17,16 +17,18 @@ export default function WeatherInfo({ weatherInfo }: any) {
             <h1>{weatherInfo?.city?.name}</h1>
           </div>
         </Col>
-        <Col xs={24} sm={24} md={16} lg={16}></Col>
-        {lat && lon && (
-          <iframe
-            width="100%"
-            src={
-              `https://maps.google.com/maps?q=${lat},${lon}&hl=es;z=14&amp;output=embed` +
-              "&output=embed"
-            }
-          ></iframe>
-        )}
+        <Col xs={24} sm={24} md={16} lg={16}>
+          {lat && lon && (
+            <iframe
+              width="95%"
+              height="100%"
+              src={
+                `https://maps.google.com/maps?q=${lat},${lon}&hl=es;z=14&amp;output=embed` +
+                "&output=embed"
+              }
+            ></iframe>
+          )}
+        </Col>
       </Row>
     </div>
   );

@@ -12,8 +12,33 @@
 }
 
 .select-address {
-  width: 100%;
+  width: 95%;
 }
 
+.weather-info {
+  width: 50vw;
+  padding: 10px;
+}
+
+/* Extra small devices (phones) */
 @media only screen and (max-width: 600px) {
+  /* Your CSS styles for extra small devices go here */
+  .weather-info {
+    width: 98vw;
+  }
+}
+
+/* Small devices (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  /* Your CSS styles for small devices go here */
+}
+
+/* Medium devices (desktops and laptops) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Your CSS styles for medium devices go here */
+}
+
+/* Large devices (large desktops) */
+@media only screen and (min-width: 1025px) {
+  /* Your CSS styles for large devices go here */
 }
