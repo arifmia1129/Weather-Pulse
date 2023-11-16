@@ -81,7 +81,7 @@ export default function Weather() {
     const { data } = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${
         (locationInfo as any).lat
-      }&lon=${(locationInfo as any).lon}&appid=${getAccessToken()}`
+      }&lon=${(locationInfo as any).lon}&units=metric&appid=${getAccessToken()}`
     );
     console.log(data);
     setWeatherInfo(data);
@@ -108,16 +108,14 @@ export default function Weather() {
   return (
     <WeatherContext.Provider value={value}>
       <div className="container">
-        <div
-          style={{ maxWidth: "1280px", backgroundColor: "#fff", padding: 5 }}
-        >
+        <div>
           <SearchLocation
             onChange={onChange}
             onSearch={onSearch}
             loading={loading}
             availableLocations={availableLocations}
           />
-          <WeatherInfo />
+          <WeatherInfo weatherInfo={weatherInfo} />
         </div>
       </div>
     </WeatherContext.Provider>

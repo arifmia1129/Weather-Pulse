@@ -1,23 +1,19 @@
 .container {
-  background-image: url("https://images.unsplash.com/photo-1498496294664-d9372eb521f3");
+  /* background-image: url("https://images.unsplash.com/photo-1498496294664-d9372eb521f3");
   background-position: "center";
   background-size: "cover";
-  background-repeat: "no-repeat";
+  background-repeat: "no-repeat"; */
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: white;
+  /* align-items: center; */
+  margin: 20px 0;
 }
 
 .select-address {
   width: 100%;
-  min-width: 300px;
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
 }
