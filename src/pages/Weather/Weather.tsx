@@ -6,6 +6,8 @@ import WeatherInfo from "../../components/Weather/WeatherInfo";
 import "./Weather.css";
 import { getAccessToken, getLocationInfo } from "../../utils/info";
 import axios from "axios";
+import Loading from "../../components/Shared/Loading";
+import Forecast from "../../components/Weather/Forecast";
 
 export const WeatherContext = createContext({});
 
@@ -108,7 +110,7 @@ export default function Weather() {
     }
   }, [locationInfo]);
 
-  const value = {};
+  const value = { weatherInfo };
 
   return (
     <WeatherContext.Provider value={value}>
@@ -120,7 +122,15 @@ export default function Weather() {
             loading={loading}
             availableLocations={availableLocations}
           />
-          <WeatherInfo weatherInfo={weatherInfo} />
+
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+              <WeatherInfo weatherInfo={weatherInfo} />
+              <Forecast />
+            </>
+          )}
         </div>
       </div>
     </WeatherContext.Provider>

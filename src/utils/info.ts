@@ -17,3 +17,19 @@ export const getLocationInfo = () => {
     lon: modifiedLocation[1],
   };
 };
+
+export function convertToAMPM(time24: string) {
+  // Split the time string into hours, minutes, and seconds
+  const [hours, minutes, seconds] = time24.split(":").map(Number);
+
+  // Determine whether it's AM or PM
+  const period = hours >= 12 ? "PM" : "AM";
+
+  // Convert the hours to 12-hour format
+  const hours12 = hours % 12 || 12;
+
+  // Format the time in AM/PM format
+  const time12 = `${hours12} ${period}`;
+
+  return time12;
+}
